@@ -1,11 +1,5 @@
 function extractQuestions() {
-  const quizTitleElement = document.querySelector('.quiz-header h2');
-  if (!quizTitleElement) {
-    console.error("Quiz title element not found.");
-    return;
-  }
 
-  const quizTitle = quizTitleElement.textContent.trim();
 
   const questionContainers = document.querySelectorAll('.quiz_sortable.question_holder');
 
@@ -60,7 +54,7 @@ function extractQuestions() {
   const blob = new Blob([extractedData], { type: 'text/plain' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = quizTitle + '.txt';
+  a.download = "Export" + '.txt';
   a.click();
 }
 
